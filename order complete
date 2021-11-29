@@ -1,0 +1,17 @@
+add_action( 'woocommerce_order_status_completed', 'wc_send_order_to_mypage' );
+function wc_send_order_to_mypage( $order_id ) {
+$shipping_add = [
+            "firstname" => $order->shipping_first_name,
+            "lastname" => $order->shipping_last_name,
+            "address1" => $order->shipping_address_1,
+            "address2" => $order->shipping_address_2,
+            "city" => $order->shipping_city,
+            "zipcode" => $order->shipping_postcode,
+            "phone" => $order->shipping_phone,
+            "state_name" => $order->shipping_state,
+            "country" => $order->shipping_country
+        ];
+//from $order you can get all the item information etc 
+//above is just a simple example how it works
+//your code to send data
+}
